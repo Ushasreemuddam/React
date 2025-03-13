@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inheritence</title>
+    <script>
+        class HDFC_Bank_Version1{
+            personal="Personal Banking Services";
+            NRI="NRI Banking Services";
+            Print(){
+                document.write(`${this.personal} <br> ${this.NRI}<br>`)
+            }
+        }
+        class HDFC_Bank_Version2 extends  HDFC_Bank_Version1 {
+            Loans="Personal and Housing Loans";
+           Print(){
+            super.Print();
+            document.write(`${this.Loans}  <br>`);
+           }
+        }
+        class HDFC_Bank_Version3 extends  HDFC_Bank_Version2 {
+            Agri="Govt Bank Schemes";
+           Print(){
+            super.Print();
+            document.write(`${this.Agri}`);
+           }
+        }
+        function InstallClick(){
+            switch( document.getElementById("lstVersions").value){
+
+                case "ver1":
+                    var obj1=new HDFC_Bank_Version1;
+                    document.write("<h2>You Insatalled Version-1</h2>")
+                    obj1.Print();
+                    break;
+                case "ver2":
+                    var obj2=new HDFC_Bank_Version2;
+                    document.write("<h2>You Insatalled Version-2</h2>")
+                    obj2.Print();
+                    break;
+                case "ver3":
+                    var obj3=new HDFC_Bank_Version3;
+                    document.write("<h2>You Insatalled Version-3</h2>")
+                    obj3.Print();
+                    break;
+                
+
+            }
+        }
+    </script>
+</head>
+<body>
+   <h2>Select Bank App Version</h2>
+   <select id="lstVersions">
+    <option value="-1">Select Version</option>
+    <option value="ver1">Version-1</option>
+    <option value="ver2">Version-2</option>
+    <option value="ver3">Version-3</option>
+   </select>
+   <button onclick="InstallClick()">Install</button>
+</body>
+</html>

@@ -1,0 +1,21 @@
+.container-fuild{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 500px;
+}
+form{
+    padding: 20px;
+    border: 2px solid black;
+    border-radius: 10px;
+    box-shadow: 10px 10px 10px gray;
+}
+.heading{
+    font-size: 30px;
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+}
+.bi-x-square{
+    color: brown;
+}

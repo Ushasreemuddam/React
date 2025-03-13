@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="/node_modules/jquery/dist/jquery.js"></script>
+    <script>
+        $(function(){
+           $("button").click(()=>{
+            $.ajax({
+                method:"get",
+                url:"usha.txt",
+                success:(data)=>{
+                    $("p").html(data)
+                }
+            })
+           })  
+        })
+        .ajaxStart(()=>{
+            alert("Your Request for help started");
+        })
+        .ajaxSuccess(()=>{
+            alert("Your Request for proccessed successfully");
+        })
+        .ajaxComplete(()=>{
+            alert("Your Request for help completed");
+        })
+        .ajaxStop(()=>{
+            alert("Your help content is ready to display")
+        })
+        .ajaxError(()=>{
+            alert("Somthing went wrong")
+        })
+    </script>
+</head>
+<body>
+    <button>Load</button>
+    <p></p>
+</body>
+</html>

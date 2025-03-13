@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class</title>
+    <script>
+        class Product{
+            Name="Samsung Tv";
+            Rating={
+                "VenderRating":{"Rate":3.8,"count":23},
+                "CustomerRating":{"Rate":3.2,"count":12}
+            }
+            get CustomerRating(){
+                return this.Rating.CustomerRating.Rate
+            }
+        }
+        let obj=new Product();
+        document.write(obj.CustomerRating)
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

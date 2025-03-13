@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Polymorphism</title>
+    <script>
+        class Employee{
+            FirstName;
+            LastName;
+            Designation;
+            Print(){
+                document.write(`FirstName:${this.FirstName}<br>LastName:${this.LastName}<br>Designation:${this.Designation}<br>`)
+            }
+        }
+        class Developer extends Employee{
+            FirstName="Usha";
+            LastName="Muddam";
+            Designation="Developer";
+            Role="Developer Role:Designing,Build,Deploy";
+            Print(){
+                super.Print();
+                document.write(`Role:${this.Role}`);
+            }
+        }
+        class Admin extends Employee{
+            FirstName="Sindhu";
+            LastName="Tokala";
+            Designation="Admin";
+            Role="Admin Role:Authorization";
+            Print(){
+                super.Print();
+                document.write(`Role:${this.Role}`);
+            }
+        }
+        class Manager extends Employee{
+            FirstName="Kranthi";
+            LastName="Muddam";
+            Designation="Manager";
+            Role="Manager Role:Approvels";
+            Print(){
+                super.Print();
+                document.write(`Role:${this.Role}`);
+            }
+        }
+        var Employees=new Array(new Developer(),new Admin(),new Manager());
+        var designation=prompt("Enter disgnaion");
+        for(var employee of Employees){
+            if(employee.Designation==designation){
+             employee.Print();   
+            }
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
